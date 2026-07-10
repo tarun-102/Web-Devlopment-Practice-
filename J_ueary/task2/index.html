@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="box-container">
+            <div class="box" id="1">Box 1</div>
+            <div class="box" id="2">Box 2</div>
+            <div class="box" id="3">Box 3</div>
+            <div class="box" id="4">Box 4</div>
+            <div class="box" id="5">Box 5</div>
+            <div class="box" id="6">Box 6</div>
+            <div class="box" id="7">Box 7</div>
+            <div class="box" id="8">Box 8</div>
+            <div class="box" id="9">Box 9</div>
+            <div class="box" id="10">Box 10</div>
+        </div>
+    </div>
+
+    <div>
+        <div class="rounded-box">
+            <button class="box1" id="addbox">Add Box</button>
+            <button class="box1" id="removebox">Remove Box</button>
+            <button class="box1" id="remallbox">Remove All Box</button>
+            <button class="box1" id="randomebox">Randome Color</button>
+            <button class="box1" id="remcolbox">Remove Color</button>
+            <button class="box1" id="circlebox">Circle Box</button>
+            <button class="box1" id="squarebox">Square Box</button>
+            <button class="box1" id="startfun">Start Fun</button>
+            <button class="box1" id="stopfun">Stop Fun</button>
+            <button class="box1" id="starteffect">Start Effect</button>
+            <button class="box1" id="stopeffect">Stop Effect</button>
+        </div>
+        <form>
+            <div class="input-container">
+                <input class="numandcorinput" type="number" name="number" id="number" placeholder="enter a number">
+
+                <input class="numandcorinput" type="text" id="color" placeholder="Enter a color name">
+            </div>
+            <div class="radio-container" style="color: black;">
+
+                <div>
+                    <input type="radio" name="showbox" id="showbox">
+                    <label for="showbox">show Box</label>
+                </div>
+
+
+                <div>*
+                    <input type="radio" name="hidebox" id="hidebox">
+                    <label for="hidebox">Hide Box</label>
+                </div>
+            </div>
+            <button type="submit">Aplay</button>
+        </form>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

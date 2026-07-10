@@ -1,0 +1,21 @@
+.todo-container{
+  height: 100vh;  
+}
+
+.form-container {
+  height: 100px; 
+}
+
+.form-input {
+  width: 400px;
+  height: 40px;
+}
+.form-input:focus{
+  outline: none;
+}
+
+.todo-item {
+  display: block;
+  height: 100px;
+  width: 55rem;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .container {
+            display: flex;
+            gap: 5px;
+        }
+
+        .box {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hello </h1>
+    <p>hello form ahmedabad</p>
+    <button id="damo1">click</button>
+    <button id="addbox">AddBox</button>
+    <button>hide</button>
+    <button id="show">show</button>
+    <button class="damo3">Toggle</button>
+    <button>Change color</button>
+    <button id="removelast">Remove Last</button>
+    <button id="removeall">Remove All</button>
+    <input type="text">
+    <button id="damo4">Enter</button>
+    <button id="f1">fadein</button>
+    <button id="f2">fadeOut</button>
+    <button id="f3">fadetoggle</button>
+    <button id="s1">slideup</button>
+    <button id="s2">sidedown</button>
+    <button id="s3">slidetoggle</button>
+    <button class="animation">Animation</button>
+
+    <div class="container">
+        <div class="box" style="background-color: yellow; height: 100px; width: 100px;">box</div>
+        <div class="box" style="background-color: royalblue; height: 100px; width: 100px;">box</div>
+    </div>
+
+
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        $("#damo1").click(function () {
+            console.log("heelo rohit")
+        })
+
+        $("h1").click(function () {
+            $("h1").text("hello tarun")
+        })
+
+        $("p").dblclick(function () {
+            $("p").hide()
+        })
+
+        $("#show").click(function () {
+            $("p").show()
+        })
+
+        $('.damo3').click(function () {
+            $("p").toggle()
+        })
+
+        $("#damo4").click(function () {
+            $("h1").text($('input').val())
+        })
+
+        function colorgenerator() {
+            let color = "#" + Math.floor(Math.random() * 16777215).toString(16)
+            return color;
+        }
+
+
+        $("#addbox").click(function () {
+            let color = colorgenerator();
+            $(".container").append(`<div class="box" style = "height: 100px; width:100px; background-color:${color}">Box</div>`)
+
+            $(".box").fadeIn(2000)
+            $(".box").css({
+                "border": "2px solid black"
+            })
+        })
+
+        // $(".box").click(function () {
+        //     $(".box").remove()
+        // })
+
+        $(".container").on("click", ".box", function () {
+            $(".box").remove()
+        })
+
+        $('#removelast').click(function () {
+
+            let lastBox = $(".box").last();
+            lastBox.fadeOut(2000, function () {
+                $(this).remove()
+            })
+        })
+
+        $('#removeall').click(function () {
+            $('.box').remove()
+        })
+
+
+        $("#f1").click(function () {
+            $(".box").fadeIn(2000, )
+        })
+
+        $("#f2").click(function () {
+            $(".box").fadeOut(2000)
+        })
+
+        $("#f3").click(function () {
+            $(".box").fadeToggle(1000)
+        })
+
+        $("#s1").click(function () {
+            $(".box").slideUp("slow")
+        })
+        $("#s2").click(function () {
+            $(".box").slideDown("slow")
+        })
+        $("#s3").click(function () {
+            $(".box").slideToggle("slow")
+        })
+
+
+
+        $(".animation").click(function () {
+            $('.box').animate({
+                width: "200px",
+                height: "200px"
+            }, 5000)
+        })
+
+
+    })
+
+
+
+
+</script>
+
+</html>
