@@ -5,29 +5,49 @@ function Pagination() {
   const dispatch = useDispatch();
 
   const { currentPage, productsPerPage } = useSelector(
-    (state) => state.pagination
+    (state) => state.pagination,
   );
 
-  const { products } = useSelector(
-    (state) => state.products
-  );
+  const { products } = useSelector((state) => state.products);
 
   const totalPages = Math.ceil(products.length / productsPerPage);
 
-  const pages = Array.from(
-    { length: totalPages },
-    (_, index) => index + 1
-  );
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      dispatch(setCurrentPage(currentPage - 1));
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      dispatch(setCurrentPage(currentPage + 1));
+    }
+  };
 
   return (
     <div className="d-flex justify-content-center align-items-center gap-2 my-5 flex-wrap">
+      <button
+        className="btn btn-dark"
+        onClick={handlePrevious}
+        disabled={currentPage === 1}
+      >
+        Previous
+      </button>
+
+      <button
+        className="btn btn-dark"
+        onClick={handleNext}
+        disabled={currentPage === totalPages}
+      >
+        Next
+      </button>
       {pages.map((page) => (
         <button
           key={page}
           className={
-            page === currentPage
-              ? "btn btn-primary"
-              : "btn btn-outline-primary"
+            page === currentPage ? "btn btn-primary" : "btn btn-outline-primary"
           }
           onClick={() => dispatch(setCurrentPage(page))}
         >
