@@ -1,0 +1,22 @@
+#backToTopBtn {
+  display: none; /* Shuru me button chup rahega */
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#backToTopBtn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}

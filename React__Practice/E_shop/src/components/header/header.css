@@ -1,0 +1,145 @@
+/* Navbar Links */
+.navbar .nav-link {
+    color: #0d2719;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #2e7d32;
+}
+
+/* Underline Animation */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 15px;
+    background: #2e7d32;
+    border-radius: 2px;
+    transition: width .3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: calc(100% - 30px);
+}
+
+/* Dropdown Menu */
+.navbar .dropdown-menu {
+    border: 1px solid rgba(11,30,69,.06);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(11,30,69,.08);
+    padding: 8px;
+    min-width: 420px;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (min-width:992px){
+    .navbar .nav-item.dropdown:hover > .dropdown-menu{
+        display:block;
+        opacity:1;
+        visibility:visible;
+    }
+}
+
+/* Brand Styling */
+.navbar-brand h1 span{
+    border-color:#2e7d32;
+    border-width:2px;
+    border-radius:4px;
+}
+
+/* Mobile View */
+@media (max-width:991.98px){
+
+    .navbar .nav-link{
+        padding:12px 0;
+    }
+
+    .navbar .nav-link::after{
+        display:none;
+    }
+
+    .navbar-nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        padding:10px 0;
+    }
+
+    .navbar .dropdown-menu{
+        border:none;
+        box-shadow:none;
+    }
+}
+/* Search Box Styling */
+.custom-search-box {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+}
+
+.custom-search-box input {
+  width: 100%;
+  padding-right: 40px;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+.custom-search-box button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #28a745;
+}
+
+/* Mobile Animation & Responsive Menu */
+@media (max-width: 991.98px) {
+  .custom-nav-container {
+    display: none;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .custom-nav-container.open {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideDownMobile 0.3s ease-in-out forwards;
+  }
+
+  .custom-search-box {
+    max-width: 100% !important;
+  }
+}
+
+@keyframes slideDownMobile {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-menu-toggler {
+  padding: 6px 12px;
+  border-radius: 4px;
+}
